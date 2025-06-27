@@ -1,0 +1,43 @@
+<UserControl x:Class="PoePart_3.Controls.ReminderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:rem="clr-namespace:Reminder"
+             MinWidth="350" MinHeight="300">
+	<Grid Background="White" Margin="10">
+		<StackPanel Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="320">
+
+			<!-- Chat Output -->
+			<ListView x:Name="chat_append"
+                      Height="200"
+                      Margin="0,0,0,10"
+                      MouseDoubleClick="chat_append_MouseDoubleClick"
+                      VerticalAlignment="Top"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<TextBlock Text="{Binding}"
+                                   TextWrapping="Wrap"
+                                   FontSize="13"
+                                   Padding="5"
+                                   Background="#F0F0F0"
+                                   Margin="0,0,0,5"/>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+
+			<!-- Task Entry -->
+			<TextBlock Text="Enter your task or reminder:" Margin="0,0,0,5"/>
+			<TextBox x:Name="user_task"
+                     Height="40"
+                     TextWrapping="Wrap"
+                     AcceptsReturn="True"
+                     Margin="0,0,0,10"/>
+
+			<!-- Buttons -->
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<Button Content="Set Reminder" Width="145" Height="30" Margin="0,0,10,0" Click="Set_Reminder"/>
+				<Button Content="Ask Question" Width="145" Height="30" Click="Ask_Question"/>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</UserControl>

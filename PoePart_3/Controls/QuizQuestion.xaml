@@ -1,0 +1,42 @@
+<UserControl x:Class="PoePart_3.Controls.QuizzQuestionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Height="450" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title and Question -->
+        <StackPanel Grid.Row="0" Margin="0,30,0,10" HorizontalAlignment="Center">
+            <TextBlock Text="Cyber security quiz [game]" FontSize="16" TextAlignment="Center"/>
+            <TextBlock x:Name="QuestionText" FontSize="16" TextAlignment="Center" Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <!-- Answer Buttons -->
+        <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="60,0,60,0">
+            <Button x:Name="OptionA" Click="Option_Click" Height="55" Margin="0,0,0,5" Background="#FFD3D3D3" FontSize="16"/>
+            <Button x:Name="OptionB" Click="Option_Click" Height="55" Margin="0,0,0,5" Background="#FFD3D3D3" FontSize="16"/>
+            <Button x:Name="OptionC" Click="Option_Click" Height="55" Margin="0,0,0,5" Background="#FFD3D3D3" FontSize="16"/>
+            <Button x:Name="OptionD" Click="Option_Click" Height="55" Margin="0,0,0,5" Background="#FFD3D3D3" FontSize="16"/>
+            <Button x:Name="NextButton" Content="Next" Click="NextButton_Click" Height="55" Background="#FFBEEAFF" FontSize="16" IsEnabled="False"/>
+        </StackPanel>
+
+        <!-- Score display: initially hidden -->
+        <TextBlock x:Name="ScoreText"
+                   Grid.Row="2"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom"
+                   FontSize="16"
+                   Foreground="Black"
+                   Margin="10,0,0,10"
+                   Visibility="Collapsed"
+                   Text="Score: 0"/>
+        <!-- Bottom right info -->
+        <TextBlock Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="14" Foreground="Gray" Margin="0,0,10,10">
+            play game first
+        </TextBlock>
+    </Grid>
+</UserControl>
